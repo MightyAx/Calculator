@@ -38,8 +38,7 @@ namespace CalculatorTests
 		public decimal FunctionCanCalculate (uint lhs, Operator op, uint rhs)
 		{
 			Function func = new Function (new Number(lhs), op, new Number(rhs));
-			func.GetResult ();
-			return 0m;
+			return func.GetResult ();
 		}
 	}
 }

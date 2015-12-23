@@ -8,11 +8,11 @@ namespace CalculatorTests
 	public class OperandTests
 	{
 		[Test]
-		[TestCase (0U)]
-		[TestCase (4294967295U)]
-		public void OperandBoundryTest (uint testInput)
+		[TestCase (UInt32.MinValue)]
+		[TestCase (UInt32.MaxValue)]
+		public void OperandBoundryTest (UInt32 testInput)
 		{
-			IOperand testOpp = new Number (testInput);
+			IOperand testOpp = new Number ((decimal)testInput);
 			Assert.AreEqual (testInput, testOpp.GetResult());
 		}
 	}
