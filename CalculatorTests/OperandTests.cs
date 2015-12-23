@@ -10,7 +10,7 @@ namespace CalculatorTests
 		[Test]
 		[TestCase (UInt32.MinValue)]
 		[TestCase (UInt32.MaxValue)]
-		public void OperandBoundryTest (UInt32 testInput)
+		public void NumberBoundryTest (UInt32 testInput)
 		{
 			IOperand testOpp = new Number ((decimal)testInput);
 			Assert.AreEqual (testInput, testOpp.GetResult());
