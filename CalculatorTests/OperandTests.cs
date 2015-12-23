@@ -12,15 +12,8 @@ namespace CalculatorTests
 		[TestCase (4294967295U)]
 		public void OperandBoundryTest (uint testInput)
 		{
-			Operand testOpp = new Operand (testInput);
+			IOperand testOpp = new Number (testInput);
 			Assert.AreEqual (testInput, testOpp.GetResult());
-		}
-
-		[Test, ExpectedException(typeof(ArgumentNullException))]
-		public void OperandNullTest ()
-		{
-			Operand testOpp = new Operand ();
-			testOpp.GetResult ();
 		}
 	}
 }

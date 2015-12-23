@@ -10,8 +10,8 @@ namespace CalculatorTests
 		[Test, TestCase(5U, 9U)]
 		public void FunctionSavesOperands (uint leftHandSide, uint rightHandSide )
 		{
-			Operand lhs = new Operand (leftHandSide);
-			Operand rhs = new Operand (rightHandSide);
+			IOperand lhs = new Number (leftHandSide);
+			IOperand rhs = new Number (rightHandSide);
 			Function testFunc = new Function (lhs, Operator.add, rhs);
 			Assert.AreEqual (leftHandSide, testFunc.LeftHandSide.GetResult());
 			Assert.AreEqual (rightHandSide, testFunc.RightHandSide.GetResult());
@@ -24,8 +24,8 @@ namespace CalculatorTests
 		[TestCase(Operator.subtract)]
 		public void FunctionSavesOperator (Operator testOp)
 		{
-			Operand leftHandSide = new Operand(5);
-			Operand rightHandSide = new Operand(9);
+			IOperand leftHandSide = new Number(5);
+			IOperand rightHandSide = new Number(9);
 			Function testFunc = new Function (leftHandSide, testOp, rightHandSide);
 			Assert.AreEqual (testOp, testFunc.Operator);
 		}
@@ -37,8 +37,8 @@ namespace CalculatorTests
 		[TestCase(4U, Operator.subtract, 1U, Result = (4U - 1U))]
 		public decimal FunctionCanCalculate (uint lhs, Operator op, uint rhs)
 		{
-			Function func = new Function (new Operand(lhs), op, new Operand(rhs));
-			func.Calculate ();
+			Function func = new Function (new Number(lhs), op, new Number(rhs));
+			func.GetResult ();
 			return 0m;
 		}
 	}
