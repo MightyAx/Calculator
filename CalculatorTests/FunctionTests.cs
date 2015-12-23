@@ -31,7 +31,7 @@ namespace CalculatorTests
 		}
 
 		[Test]
-		[TestCase(5U, Operator.divide, 2U, Result = (5U / 2U))]
+		[TestCase(6U, Operator.divide, 2U, Result = (6U / 2U))]
 		[TestCase(7U, Operator.multiply, 2U, Result = (7U * 2U))]
 		[TestCase(5U, Operator.add, 2U, Result = (5U + 2U))]
 		[TestCase(4U, Operator.subtract, 1U, Result = (4U - 1U))]

@@ -15,7 +15,19 @@ namespace Calculator
 
 		public decimal GetResult ()
 		{
-			throw new NotImplementedException ();
+			if (Operator == Operator.divide) {
+				return LeftHandSide.GetResult() / RightHandSide.GetResult();
+			}
+			if (Operator == Operator.multiply) {
+				return LeftHandSide.GetResult() * RightHandSide.GetResult();
+			}
+			if (Operator == Operator.add) {
+				return LeftHandSide.GetResult() + RightHandSide.GetResult();
+			}
+			if (Operator == Operator.subtract) {
+				return LeftHandSide.GetResult() - RightHandSide.GetResult();
+			}
+			throw new ArithmeticException ();
 		}
 
 		#endregion
