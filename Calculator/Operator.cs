@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 
 namespace Calculator
 {
-	public class Operator
+	public enum Operator
 	{
-		public Operator ()
-		{
-		}
+		divide,
+		multiply,
+		add,
+		subtract,
 	}
 }
-

@@ -39,12 +39,5 @@ namespace Calculator
 		public IOperand RightHandSide { get; private set;}
 	}
 
-	public enum Operator
-	{
-		divide,
-		multiply,
-		add,
-		subtract,
-	}
 }
 

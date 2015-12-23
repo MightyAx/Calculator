@@ -41,6 +41,7 @@
     <Compile Include="Function.cs" />
     <Compile Include="Interfaces\IOperand.cs" />
     <Compile Include="Number.cs" />
+    <Compile Include="Operator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
