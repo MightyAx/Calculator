@@ -42,6 +42,7 @@
     <Compile Include="Interfaces\IOperand.cs" />
     <Compile Include="Number.cs" />
     <Compile Include="Operator.cs" />
+    <Compile Include="Parser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
