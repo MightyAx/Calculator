@@ -11,11 +11,11 @@ namespace CalculatorTests
 		[Test]
 		public void ParserCanMakeList ()
 		{
-			const string input = "123+56*2";
+			const string equation = "123+56*2";
 			List<string> expectedResult = new List<string>(new string[] { "123", "+", "56", "*", "2"});
 
 			Parser parser = new Parser ();
-			List<string> result = parser.Parse (input);
+			List<string> result = parser.ParseEquation (equation);
 
 			Assert.AreEqual (expectedResult.Count, result.Count);
 			for (int i = 0; i < expectedResult.Count; i++)

@@ -12,7 +12,24 @@ namespace Calculator
 		{
 		}
 
-		public List<string> Parse(string equation)
+		public Operator ParseOperator(string op)
+		{
+			if (op == "/") {
+				return Operator.divide;
+			}
+			if (op == "*") {
+				return Operator.multiply;
+			}
+			if (op == "+") {
+				return Operator.add;
+			}
+			if (op == "-") {
+				return Operator.subtract;
+			}
+			throw new ArgumentException ("Invalid Operator");
+		}
+
+		public List<string> ParseEquation(string equation)
 		{
 			if (!Regex.IsMatch(equation, PATTERN))
 			{
