@@ -23,6 +23,17 @@ namespace CalculatorTests
 				Assert.AreEqual (expectedResult [i], result [i]);
 			}
 		}
+
+		[Test]
+		public void ParserCanMakeFunctionMap ()
+		{
+			List<string> list = new List<string>(new string[] { "123", "+", "56", "*", "2"});
+
+			Parser parser = new Parser ();
+			parser.ParseList (list);
+
+
+		}
 	}
 }
 

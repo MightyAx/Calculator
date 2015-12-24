@@ -46,6 +46,24 @@ namespace Calculator
 			list.Add (equation);
 			return list;
 		}
+
+		public IOperand ParseList(List<string> components)
+		{
+			int op = components.FindIndex ((s) => s == "/" || s == "*");
+			if (op == -1) {
+				components.FindIndex ((s) => s == "+" || s == "-");
+			}
+			if (op == -1) {
+				//return new number
+			}
+			UInt32 left, right;
+			if (UInt32.TryParse(components[op - 1], out left) && UInt32.TryParse(components[op + 1], out right)) {
+				Function significantFunction = new Function (new Number (left), ParseOperator (components [op]), new Number (right));
+				//add pre and post funtion to create a function.
+				return significantFunction;
+			}
+			throw new InvalidOperationException ();
+		}
 	}
 }
 
