@@ -11,13 +11,13 @@ namespace CalculatorTests
 		[Test]
 		public void ParserCanMakeList ()
 		{
-			const string input = "4+5*2";
-			List<string> expectedResult = new List<string>(new string[] { "4", "+", "5", "*", "2"});
+			const string input = "123+56*2";
+			List<string> expectedResult = new List<string>(new string[] { "123", "+", "56", "*", "2"});
 
 			Parser parser = new Parser ();
 			List<string> result = parser.Parse (input);
 
-			Assert.AreEqual (expectedResult.Count, result);
+			Assert.AreEqual (expectedResult.Count, result.Count);
 			for (int i = 0; i < expectedResult.Count; i++)
 			{
 				Assert.AreEqual (expectedResult [i], result [i]);
