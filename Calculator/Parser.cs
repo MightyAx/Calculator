@@ -59,16 +59,16 @@ namespace Calculator
 
 		public IOperand ParseList(List<string> components)
 		{
-			int op = components.FindIndex ((s) => s == "/" || s == "*");
-			if (op == -1) {
+			int opperatorPosition = components.FindIndex ((s) => s == "/" || s == "*");
+			if (opperatorPosition == -1) {
 				components.FindIndex ((s) => s == "+" || s == "-");
 			}
-			if (op == -1) {
+			if (opperatorPosition == -1) {
 				return ParseNumber (components [0]);
 			}
 			UInt32 left, right;
-			if (UInt32.TryParse(components[op - 1], out left) && UInt32.TryParse(components[op + 1], out right)) {
-				Function significantFunction = new Function (new Number (left), ParseOperator (components [op]), new Number (right));
+			if (UInt32.TryParse(components[opperatorPosition - 1], out left) && UInt32.TryParse(components[opperatorPosition + 1], out right)) {
+				Function significantFunction = new Function (new Number (left), ParseOperator (components [opperatorPosition]), new Number (right));
 				//add pre and post funtion to create a function.
 				return significantFunction;
 			}
