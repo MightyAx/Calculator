@@ -12,6 +12,16 @@ namespace Calculator
 		{
 		}
 
+		public Number ParseNumber(string stringNumber)
+		{
+			decimal decimalNumber;
+			if (Decimal.TryParse(stringNumber, out decimalNumber))
+			{
+				return new Number (decimalNumber);
+			}
+			throw new ArgumentException ("Invalid Number");
+		}
+
 		public Operator ParseOperator(string op)
 		{
 			if (op == "/") {
@@ -54,7 +64,7 @@ namespace Calculator
 				components.FindIndex ((s) => s == "+" || s == "-");
 			}
 			if (op == -1) {
-				//return new number
+				return ParseNumber (components [0]);
 			}
 			UInt32 left, right;
 			if (UInt32.TryParse(components[op - 1], out left) && UInt32.TryParse(components[op + 1], out right)) {
